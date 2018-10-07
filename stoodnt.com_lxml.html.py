@@ -3,6 +3,7 @@
 import numpy as np
 import pandas as pd
 import lxml.html as lh
+import requests
 
 url = "https://www.stoodnt.com/blog/fall-2019-application-deadlines-and-gre-requirements-for-ms-in-us/"
 
