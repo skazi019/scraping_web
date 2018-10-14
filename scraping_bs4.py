@@ -50,3 +50,32 @@ df.head()
 df['Programs'] = programs
 
 df.head()
+
+all_desc = soup.findAll("p")
+
+description = []
+
+for desc in all_desc:
+    description.append(desc.text)
+
+description
+
+desc_pd = pd.DataFrame(description)
+
+print(desc_pd)
+desc_pd = desc_pd.drop(desc_pd.index[0:13])
+
+desc_pd = desc_pd.drop([72,73])
+
+desc_pd
+
+
+for i in range(14,71,2):
+    desc_pd = desc_pd.drop(i)
+
+desc_pd.index = np.arange(1, len(desc_pd) +1)
+df.index = np.arange(1, len(df) +1)
+desc_pd.head()
+df.head()
+
+pd.merge(df,desc_pd,)
